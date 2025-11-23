@@ -2,3 +2,19 @@ pkg/
 api.key
 .api.key.trimmed
 *-handin.tar.gz
+
+# SemperBench
+node_modules/
+__pycache__/
+*.pyc
+dist/
+build/
+.turbo/
+.env
+.env.local
+*.log
+.wrangler/
+.dev.vars
+*.duckdb
+*.duckdb.wal
+.DS_Store

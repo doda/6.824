@@ -1,0 +1,16 @@
+name = "semperbench-ingestion"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# R2 bucket binding
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "semperbench-data"
+
+# KV for API key validation (optional)
+[[kv_namespaces]]
+binding = "API_KEYS"
+id = "YOUR_KV_NAMESPACE_ID"
+
+[env.production]
+name = "semperbench-ingestion-prod"

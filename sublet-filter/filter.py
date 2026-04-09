@@ -30,9 +30,15 @@ DOWNTOWN_MANHATTAN = {
     "lower east side", "les", "east village", "west village",
     "greenwich village", "chinatown", "two bridges", "little italy",
     "battery park", "civic center", "seaport", "union square",
+    "alphabet city",
 }
 WILLIAMSBURG = {"williamsburg", "east williamsburg", "south williamsburg"}
-TARGETS = DOWNTOWN_MANHATTAN | WILLIAMSBURG
+# User-expanded Brooklyn neighborhoods.
+BROOKLYN_EXTRAS = {
+    "greenpoint", "fort greene", "ft greene", "ft. greene",
+    "cobble hill", "brooklyn heights",
+}
+TARGETS = DOWNTOWN_MANHATTAN | WILLIAMSBURG | BROOKLYN_EXTRAS
 
 # Criteria: available starting no later than early June, running at least
 # through Sep 1. "Mid-May start" is interpreted generously as "start by Jun 1".
@@ -158,11 +164,13 @@ def main(argv: list[str]) -> int:
     print("# NYC Sublet Matches")
     print()
     print("Criteria: studio or 1BR; downtown Manhattan (FiDi, Tribeca, SoHo,")
-    print("NoHo, Nolita, LES, East Village, West Village, Chinatown, etc.) or")
-    print("Williamsburg; start by 2026-06-01; end on or after 2026-09-01.")
+    print("NoHo, Nolita, LES, East Village, West Village, Chinatown, Alphabet")
+    print("City, etc.), Williamsburg/East Williamsburg, or these Brooklyn")
+    print("neighborhoods: Greenpoint, Fort Greene, Cobble Hill, Brooklyn")
+    print("Heights. Start by 2026-06-01; end on or after 2026-09-01.")
     print()
-    print("Source: listingsproject.com/real-estate/new-york-city, pages 1-8")
-    print("(scraped via public browsable site).")
+    print("Source: listingsproject.com/real-estate/new-york-city, pages 1-37")
+    print("(full scrape via public browsable site).")
     print()
     print(f"**{len(matches)} strong match(es)** out of {len(listings)} listings scanned.")
     print()
